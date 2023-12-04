@@ -1,3 +1,5 @@
+import sys
+
 def cleanLine(line: str) -> tuple(str, str):
     tmp, cleanLine = line.split(':')
     winNum, myNum = cleanLine.split('|')
