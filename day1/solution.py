@@ -1,8 +1,8 @@
-import sys
+# https://adventofcode.com/2023/day/1
+
 import re
 
 if __name__ == "__main__":
-    sys.argv[1] if sys.argv[1] else 'example.txt'
     f = open('input.txt')
     lines = f.readlines()
 
