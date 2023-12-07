@@ -4,8 +4,15 @@ from collections import defaultdict
 import time
 
 def check_type(counts):
+    joker = counts.get('J', 0)
+    if joker == 5:
+        joker = 0
+    else:
+        counts['J'] = 0
     values = list(counts.values())
     values.sort(reverse=True)
+    if joker:
+        values[0] += joker
 
     if values[0] == 5:
         return 7
@@ -17,7 +24,7 @@ def check_type(counts):
         else:
             return 4
     elif values[0] == 2:    
-        if values[1] == 2:
+        if  values[1] == 2:
             return 3
         else:
             return 2
@@ -51,7 +58,7 @@ if __name__ == "__main__":
     
     hand_value = 1
     sum = 0
-    card_values = {'A': 14, 'K': 13, 'Q': 12, 'J': 11, 'T': 10}
+    card_values = {'A': 14, 'K': 13, 'Q': 12, 'J': 1, 'T': 10}
     for key, value in ranks.items():
         if not value:
             continue
@@ -71,5 +78,5 @@ if __name__ == "__main__":
                 print(f"{hand_value}, {card} : {curr_card[0]}")
                 hand_value += 1
 
-    print(f"Sum: {sum}") # Sum: 246795406
-    print(f"Finished in: {time.perf_counter() - begin:.6f}s") # Finished in: 0.004189s
+    print(f"Sum: {sum}") # Sum: 249356515
+    print(f"Finished in: {time.perf_counter() - begin:.6f}s") # Finished in: 0.004702s
