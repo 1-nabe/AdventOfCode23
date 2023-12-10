@@ -33,6 +33,6 @@ if __name__ == "__main__":
                 steps += 1
         all_steps.append(steps)
 
-    
-    print(f"Steps: {np.lcm.reduce(all_steps)}") # Steps: 18215611419223
-    print(f"Finished in: {time.perf_counter() - begin:.6f}s") # Finished in: 0.013985s
+    print(f"Steps: {np.lcm.reduce(all_steps)}")  # Steps: 18215611419223
+    # Finished in: 0.013985s
+    print(f"Finished in: {time.perf_counter() - begin:.6f}s")

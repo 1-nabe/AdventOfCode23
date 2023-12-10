@@ -14,14 +14,14 @@ if __name__ == "__main__":
             if lines[line][i] in symbols:
                 return True
         return False
-    
+
     def checkDigitLength(line, index):
         length = 1
         while lines[line][index + 1].isdigit():
             length += 1
             index += 1
         return length
-    
+
     def checkSurrounding(line, index):
         length = checkDigitLength(lineId, index)
 
@@ -38,7 +38,7 @@ if __name__ == "__main__":
         if line != len(lines) - 1 and checkLineForSymbol(line + 1, index - 1, index + length):
             return True, length
         return False, length
-    
+
     counter = 0
     motor_parts = []
     for lineId, line in enumerate(lines):
@@ -51,6 +51,6 @@ if __name__ == "__main__":
                 if is_motor_part:
                     motor_parts.append(line[index:index + length])
                 counter = length - 1
-    
+
     print(f"Sum of motor parts: {sum([int(x) for x in motor_parts])}")
     print(f"Finished in: {time.perf_counter() - begin:.6f}s")

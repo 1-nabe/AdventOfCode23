@@ -2,6 +2,7 @@
 
 import re
 
+
 def race(times, distances):
     solution = 1
     for i in range(len(times)):
@@ -12,6 +13,7 @@ def race(times, distances):
         solution *= possibilities
     return solution
 
+
 if __name__ == "__main__":
     f = open('input.txt')
     lines = f.readlines()
@@ -19,7 +21,7 @@ if __name__ == "__main__":
     timeStrings = re.findall(r'\d+', lines[0])
     distanceStrings = re.findall(r'\d+', lines[1])
     # Part 1
-    times, distances = [[],[]]
+    times, distances = [[], []]
     for i in range(len(timeStrings)):
         times.append(int(timeStrings[i]))
         distances.append(int(distanceStrings[i]))

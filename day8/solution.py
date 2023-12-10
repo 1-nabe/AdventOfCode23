@@ -25,5 +25,6 @@ if __name__ == "__main__":
             curr = nodes[curr][direction]
             steps += 1
 
-    print(f"Steps: {steps}") # Steps: 12361
-    print(f"Finished in: {time.perf_counter() - begin:.6f}s") # Finished in: 0.002538s
+    print(f"Steps: {steps}")  # Steps: 12361
+    # Finished in: 0.002538s
+    print(f"Finished in: {time.perf_counter() - begin:.6f}s")

@@ -3,6 +3,8 @@
 import re
 
 # Finds the number of cubes for a color in a line, returns 0 if not found
+
+
 def findCubes(color: str, line: str) -> int:
     cubeLine = re.findall(r'\b(?:[1-9]|1[0-9]|20)\s' + color + r'\b', line)
 
@@ -22,7 +24,7 @@ if __name__ == "__main__":
         _, games_line = line.split(':')
 
         # Splits the games into rounds
-        game_rounds = games_line.split(';') 
+        game_rounds = games_line.split(';')
 
         # Finds the max rgb values for each round
         max_rgb = [0, 0, 0]
@@ -36,11 +38,11 @@ if __name__ == "__main__":
             b = findCubes('blue', game_round)
             if b > max_rgb[2]:
                 max_rgb[2] = b
-        
+
         # Calculates the product of the max rgb values
         prod = 1
         for i in range(len(max_rgb)):
             prod *= max_rgb[i]
         max_sum.append(prod)
-    
+
     print(sum(max_sum))

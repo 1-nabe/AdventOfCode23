@@ -6,6 +6,8 @@ import re
 rgb_config = [12, 13, 14]
 
 # Finds the number of cubes for a color in a line, returns 0 if not found
+
+
 def findCubes(color: str, line: str) -> int:
     cubeLine = re.findall(r'\b(?:[1-9]|1[0-9]|20)\s' + color + r'\b', line)
 
@@ -28,7 +30,7 @@ if __name__ == "__main__":
         _, games_line = line.split(':')
 
         # Splits the games into rounds
-        game_rounds = games_line.split(';') 
+        game_rounds = games_line.split(';')
 
         for game_round in game_rounds:
             rgb = []
@@ -36,7 +38,7 @@ if __name__ == "__main__":
             rgb.append(findCubes('red', game_round))
             rgb.append(findCubes('green', game_round))
             rgb.append(findCubes('blue', game_round))
-            
+
             for i in range(len(rgb)):
                 if rgb[i] > rgb_config[i]:
                     impossible = True
