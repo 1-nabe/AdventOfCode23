@@ -1,9 +1,14 @@
 # https://adventofcode.com/2023/day/1
 
+from pathlib import Path
 import re
 
+SCRIPT_PATH = Path(__file__).resolve().parent
+INPUT_PATH = Path(SCRIPT_PATH, 'input.txt')
+EINPUT_PATH = Path(SCRIPT_PATH, 'input_example.txt')
+
 if __name__ == "__main__":
-    f = open('input.txt')
+    f = open(SCRIPT_PATH)
     lines = f.readlines()
 
     sum = 0
